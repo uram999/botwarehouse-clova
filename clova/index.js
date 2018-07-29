@@ -24,20 +24,20 @@ function resultText({midText, sum, diceCount}) {
 }
 
 function throwDice(diceCount) {
-  const results = []
-  let midText = ''
-  let resultText = ''
-  let sum = 0
-  console.log(`throw ${diceCount} times`)
+  const results = [];
+  let midText = '';
+  let resultText = '';
+  let sum = 0;
+  console.log(`throw ${diceCount} times`);
   for (let i = 0; i < diceCount; i++) {
-    const rand = Math.floor(Math.random() * 6) + 1
-    console.log(`${i + 1} time: ${rand}`)
-    results.push(rand)
-    sum += rand
+    const rand = Math.floor(Math.random() * 6) + 1;
+    console.log(`${i + 1} time: ${rand}`);
+    results.push(rand);
+    sum += rand;
     midText += `${rand}, `
   }
 
-  midText = midText.replace(/, $/, '')
+  midText = midText.replace(/, $/, '');
   return {midText, sum, diceCount}
 }
 
@@ -166,10 +166,10 @@ class CEKResponse {
 }
 
 const clovaReq = function (httpReq, httpRes, next) {
-  cekResponse = new CEKResponse()
-  cekRequest = new CEKRequest(httpReq)
-  cekRequest.do(cekResponse)
-  console.log(`CEKResponse: ${JSON.stringify(cekResponse)}`)
+  cekResponse = new CEKResponse();
+  cekRequest = new CEKRequest(httpReq);
+  cekRequest.do(cekResponse);
+  console.log(`CEKResponse: ${JSON.stringify(cekResponse)}`);
   return httpRes.send(cekResponse)
 };
 

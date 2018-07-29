@@ -5,7 +5,7 @@ const morgan = require('morgan');
 
 const {SERVER_PORT} = require('./config.js');
 const routes = require('./routes');
-const clova = require('./clova/index.js');
+const clova = require('./clova');
 
 const app = express();
 
