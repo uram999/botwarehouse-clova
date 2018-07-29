@@ -62,7 +62,7 @@ class CEKRequest {
 
   launchRequest(cekResponse) {
     console.log('launchRequest')
-    cekResponse.setSimpleSpeechText('주식 분위기 확인 봇입니다. 당신의 종목을 분석해드릴게요!')
+    cekResponse.setSimpleSpeechText('주식 확인 봇입니다. 당신의 종목을 분석해드릴게요!')
     cekResponse.setMultiturn({
       intent: 'ThrowDiceIntent',
     })
