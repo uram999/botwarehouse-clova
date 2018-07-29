@@ -5,7 +5,7 @@ const morgan = require('morgan');
 
 const {SERVER_PORT} = require('./config.js');
 const routes = require('./routes');
-const clova = require('./clova/index');
+const clova = require('./clova/index.js');
 
 const app = express();
 
@@ -18,6 +18,7 @@ app.use('/', routes);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   console.log(req.body);
+  clova.clovaReq(req, res, next);
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
