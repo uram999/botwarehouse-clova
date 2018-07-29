@@ -21,6 +21,6 @@ app.use((req, res, next) => {
   next(err);
 });
 
-app.listen(SERVER_PORT, () => {
+app.listen((process.env.PORT || 3000), () => {
   console.log(`Server is running on ${SERVER_PORT} port`);
 });
